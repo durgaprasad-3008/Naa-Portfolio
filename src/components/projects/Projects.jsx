@@ -50,7 +50,7 @@ function Projects() {
 
   return (
 
-    <section className="relative overflow-hidden py-20 px-6 md:px-12 lg:px-20">
+    <section id="projects" className="scroll-mt-16 relative overflow-hidden py-14 px-6 md:px-12 lg:px-20">
 
       {/* BACKGROUND GLOW */}
 

@@ -7,6 +7,10 @@ import Projects from "./components/projects/Projects";
 import Certificates from "./components/certificates/Certificates";
 import CursorParticles from "./components/effects/CursorParticles";
 import LeavesBackground from "./components/effects/LeavesBackground";
+import Achievements from "./components/achievements/Achievements";
+import Contact from "./components/contact/Contact";
+import FloatingContact from "./components/contact/FloatingContact";
+import Footer from "./components/layout/Footer";
 
 import MatrixBackground from "./components/hero/MatrixBackground";
 
@@ -39,7 +43,15 @@ function App() {
 
         <CursorParticles />
 
+        <Achievements />
+
+        <Contact />
+
+        <Footer />
+
       </div>
+
+      <FloatingContact />
 
     </div>
 

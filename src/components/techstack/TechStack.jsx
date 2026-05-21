@@ -124,7 +124,7 @@ function TechStack() {
         `}
       </style>
 
-      <section className="tech-section relative overflow-hidden py-20 px-6 md:px-14 lg:px-24">
+      <section id="techstack" className="tech-section scroll-mt-16 relative overflow-hidden py-14 px-6 md:px-12 lg:px-20">
 
         {/* FALLING LEAVES */}
         <LeavesBackground />

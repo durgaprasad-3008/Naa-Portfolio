@@ -3,7 +3,7 @@ import { Download } from "lucide-react";
 
 function About() {
   return (
-<section className="relative  overflow-hidden px-4 md:px-10 lg:px-16 xl:px-20 py-10">
+<section id="about" className="scroll-mt-16 relative  overflow-hidden px-6 md:px-12 lg:px-20 py-14">
       {/* BACKGROUND GLOW 1 */}
       <motion.div
         animate={{
@@ -86,7 +86,7 @@ function About() {
           </h2>
 
           {/* DESCRIPTION */}
-          <p className="text-gray-400 leading-8 text-sm md:text-base max-w-xl">
+          <p className="text-gray-400 leading-8 text-sm md:text-base max-w-xl md:pl-6">
 
             Full Stack Engineer with expertise in Java enterprise
             applications, MERN stack development, and enterprise
@@ -99,7 +99,7 @@ function About() {
           </p>
 
           {/* SKILLS */}
-          <div className="flex flex-wrap gap-3 mt-8">
+          <div className="flex flex-wrap gap-3 mt-8 md:pl-6">
 
             {[
               "Java Full Stack Developer",
@@ -128,12 +128,12 @@ function About() {
             whileHover={{
               scale: 1.03,
             }}
-            className="mt-10 border border-red-600 bg-red-600 hover:bg-red-700 transition px-7 py-3 rounded-xl font-medium flex items-center gap-3 shadow-[0_0_20px_rgba(255,0,0,0.4)] text-sm"
+            className="mt-8 md:ml-6 border border-red-600 bg-red-600 hover:bg-red-700 transition px-4 py-2 rounded-lg font-medium flex items-center gap-2 shadow-[0_0_15px_rgba(255,0,0,0.4)] text-xs"
           >
 
-            OPEN DARK RESUME
+            DOWNLOAD RESUME
 
-            <Download size={16} />
+            <Download size={14} />
 
           </motion.button>
 
@@ -153,7 +153,7 @@ function About() {
             duration: 1,
           }}
           viewport={{ once: true }}
-          className="relative pt-10 md:pt-12"
+          className="relative pt-6 md:pt-8 md:max-w-md md:ml-auto w-full"
         >
 
           {/* GLASS CARD */}
@@ -162,21 +162,21 @@ function About() {
               y: -5,
               boxShadow: "0px 0px 25px rgba(255,0,0,0.1)",
             }}
-            className="border border-red-500/10 bg-white/[0.02] backdrop-blur-xl rounded-2xl p-5 relative overflow-hidden"
+            className="border border-red-500/10 bg-white/[0.02] backdrop-blur-xl rounded-2xl p-4 relative overflow-hidden"
           >
 
             {/* INNER GLOW */}
             <div className="absolute top-[-80px] right-[-80px] w-[160px] h-[160px] bg-red-600/10 blur-[90px] rounded-full"></div>
 
             {/* TITLE */}
-            <h3 className="text-lg md:text-xl font-black mb-5 relative z-10">
+            <h3 className="text-base md:text-lg font-black mb-4 relative z-10">
 
               CORE <span className="text-red-600">STRENGTHS</span>
 
             </h3>
 
             {/* STRENGTH LIST */}
-            <div className="grid grid-cols-1 gap-3 relative z-10">
+            <div className="grid grid-cols-1 gap-2 relative z-10">
 
               {[
                 "Client-focused delivery",
@@ -190,14 +190,14 @@ function About() {
                   whileHover={{
                     x: 5,
                   }}
-                  className="flex items-center gap-3 border border-red-500/10 rounded-xl px-4 py-2.5 bg-black/40 hover:bg-red-500/5 transition duration-300"
+                  className="flex items-center gap-3 border border-red-500/10 rounded-xl px-3 py-2 bg-black/40 hover:bg-red-500/5 transition duration-300"
                 >
 
                   {/* DOT */}
-                  <div className="w-2 h-2 bg-red-500 rounded-full shadow-[0_0_10px_red]"></div>
+                  <div className="w-1.5 h-1.5 bg-red-500 rounded-full shadow-[0_0_10px_red]"></div>
 
                   {/* TEXT */}
-                  <p className="text-gray-300 text-xs md:text-sm">
+                  <p className="text-gray-300 text-xs md:text-[13px]">
 
                     {item}
 

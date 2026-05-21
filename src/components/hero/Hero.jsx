@@ -4,7 +4,7 @@ import ParticlesBackground from "./ParticlesBackground";
 
 function Hero() {
   return (
-    <section className="relative min-h-screen  overflow-hidden px-4 md:px-10 lg:px-16 xl:px-20">
+    <section  id="home" className="scroll-mt-16 relative min-h-screen  overflow-hidden px-4 md:px-10 lg:px-16 xl:px-20">
 
       {/* PARTICLES */}
       <ParticlesBackground />
@@ -108,20 +108,84 @@ function Hero() {
           </p>
 
           {/* MAIN TITLE */}
-          <h1 className="text-4xl md:text-6xl font-black leading-none">
+          <style>
+            {`
+              @keyframes nameShine {
+                0% { background-position: 200% center; }
+                100% { background-position: -200% center; }
+              }
 
-            DURGA
+              .name-shine {
+                background: linear-gradient(
+                  90deg,
+                  #ffffff 0%,
+                  #ffffff 38%,
+                  #ff4d4d 50%,
+                  #ffffff 62%,
+                  #ffffff 100%
+                );
+                background-size: 200% auto;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: nameShine 3.5s linear infinite;
+              }
+
+              .name-shine-red {
+                background: linear-gradient(
+                  90deg,
+                  #dc2626 0%,
+                  #dc2626 38%,
+                  #ffffff 50%,
+                  #dc2626 62%,
+                  #dc2626 100%
+                );
+                background-size: 200% auto;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: nameShine 3.5s linear infinite;
+              }
+
+              @keyframes glassFlow {
+                0%, 100% { background-position: 0% center; }
+                50% { background-position: 100% center; }
+              }
+
+              .glass-text {
+                background: linear-gradient(
+                  90deg,
+                  #67e8f9 0%,
+                  #a5f3fc 25%,
+                  #ffffff 50%,
+                  #c4b5fd 75%,
+                  #67e8f9 100%
+                );
+                background-size: 200% auto;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: glassFlow 5s ease-in-out infinite;
+                filter: drop-shadow(0 0 12px rgba(103, 232, 249, 0.45))
+                        drop-shadow(0 0 24px rgba(196, 181, 253, 0.25));
+              }
+            `}
+          </style>
+
+          <h1 className="text-4xl md:text-6xl font-black leading-none md:pl-6">
+
+            <span className="name-shine">DURGA</span>
 
             <br />
 
-            <span className="text-red-600">
+            <span className="name-shine-red">
               PRASAD
             </span>
 
           </h1>
 
           {/* TYPING TEXT */}
-          <div className="mt-5 text-xl md:text-3xl font-bold h-[50px]">
+          <div className="mt-5 text-lg md:text-2xl font-bold h-[40px] md:pl-6 glass-text">
 
             <TypeAnimation
               sequence={[
@@ -137,7 +201,7 @@ function Hero() {
           </div>
 
           {/* DESCRIPTION */}
-          <p className="mt-6 text-gray-400 leading-8 text-sm md:text-base max-w-xl">
+          <p className="mt-6 text-gray-400 leading-8 text-sm md:text-base max-w-xl md:pl-6">
 
             Passionate Full Stack Developer specializing
             in enterprise systems, scalable applications,
@@ -146,13 +210,16 @@ function Hero() {
           </p>
 
           {/* BUTTONS */}
-          <div className="flex gap-4 mt-8 flex-wrap">
+          <div className="flex gap-4 mt-8 flex-wrap md:pl-6">
 
-            <button className="bg-red-600 px-6 py-3 rounded-xl text-sm font-medium hover:scale-105 transition duration-300 shadow-[0_0_25px_rgba(255,0,0,0.4)]">
+            <a
+              href="#projects"
+              className="inline-block bg-red-600 px-6 py-3 rounded-xl text-sm font-medium hover:scale-105 transition duration-300 shadow-[0_0_25px_rgba(255,0,0,0.4)]"
+            >
 
               Explore Projects
 
-            </button>
+            </a>
 
             <button className="border border-red-600 px-6 py-3 rounded-xl text-sm hover:bg-red-600 transition duration-300">
 

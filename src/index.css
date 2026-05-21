@@ -25,3 +25,7 @@ body{
   pointer-events: none;
   will-change: transform, opacity;
 }
+
+html {
+  scroll-behavior: smooth;
+}

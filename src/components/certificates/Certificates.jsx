@@ -1,116 +1,81 @@
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+import cert1 from "./Crtfcte_Ptos/1.png";
+import cert2 from "./Crtfcte_Ptos/2.png";
+import cert3 from "./Crtfcte_Ptos/3.png";
+import cert4 from "./Crtfcte_Ptos/4.png";
+import cert5 from "./Crtfcte_Ptos/5.png";
+import cert6 from "./Crtfcte_Ptos/6.png";
+import cert7 from "./Crtfcte_Ptos/7.png";
+import cert8 from "./Crtfcte_Ptos/8.png";
+import cert9 from "./Crtfcte_Ptos/9.png";
+import cert10 from "./Crtfcte_Ptos/10.png";
+import cert11 from "./Crtfcte_Ptos/11.png";
 
 const certificates = [
-  "/certificates/c1.jpg",
-  "/certificates/c2.jpg",
-  "/certificates/c3.jpg",
-  "/certificates/c4.jpg",
-  "/certificates/c5.jpg",
-  "/certificates/c6.jpg",
-  "/certificates/c7.jpg",
-  "/certificates/c8.jpg",
+  cert1,
+  cert2,
+  cert3,
+  cert4,
+  cert5,
+  cert6,
+  cert7,
+  cert8,
+  cert9,
+  cert10,
+  cert11,
 ];
-
-function FallingLeaves() {
-
-  const leaves = [
-    "https://www.pngmart.com/files/1/Fall-Autumn-Leaves-Transparent-PNG.png",
-    "https://www.pngmart.com/files/1/Autumn-Fall-Leaves-Pictures-Collage-PNG.png",
-    "https://www.pngmart.com/files/1/Autumn-Fall-Leaves-Clip-Art-PNG.png",
-    "https://www.pngmart.com/files/1/Green-Leaves-PNG-File.png",
-    "https://www.pngmart.com/files/1/Transparent-Autumn-Leaves-Falling-PNG.png",
-    "https://www.pngmart.com/files/1/Realistic-Autumn-Fall-Leaves-PNG.png",
-  ];
-
-  return (
-
-    <>
-
-      <style>
-
-        {`
-
-          .leaf-animation {
-
-            position: absolute;
-            top: -10%;
-            animation-name: fall;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-            pointer-events: none;
-
-          }
-
-          @keyframes fall {
-
-            0% {
-              transform: translateY(-10vh) translateX(0px) rotate(0deg);
-              opacity: 0;
-            }
-
-            10% {
-              opacity: 1;
-            }
-
-            25% {
-              transform: translateY(25vh) translateX(20px) rotate(90deg);
-            }
-
-            50% {
-              transform: translateY(50vh) translateX(-20px) rotate(180deg);
-            }
-
-            75% {
-              transform: translateY(75vh) translateX(20px) rotate(270deg);
-            }
-
-            100% {
-              transform: translateY(120vh) translateX(-20px) rotate(360deg);
-              opacity: 0;
-            }
-
-          }
-
-        `}
-
-      </style>
-
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-
-        {[...Array(18)].map((_, index) => (
-
-          <img
-            key={index}
-            src={leaves[index % leaves.length]}
-            alt=""
-            className="leaf-animation"
-            style={{
-              left: `${Math.random() * 100}%`,
-              width: `${35 + Math.random() * 25}px`,
-              height: `${35 + Math.random() * 25}px`,
-              animationDuration: `${10 + Math.random() * 10}s`,
-              animationDelay: `${Math.random() * 8}s`,
-              opacity: 0.7,
-            }}
-          />
-
-        ))}
-
-      </div>
-
-    </>
-
-  );
-
-}
 
 function Certificates() {
 
   const [current, setCurrent] = useState(0);
 
   const [paused, setPaused] = useState(false);
+
+  const [zoomedIndex, setZoomedIndex] = useState(null);
+
+  const resumeTimerRef = useRef(null);
+
+  const scheduleResume = () => {
+
+    if (resumeTimerRef.current) {
+      clearTimeout(resumeTimerRef.current);
+    }
+
+    resumeTimerRef.current = setTimeout(() => {
+
+      setZoomedIndex(null);
+
+      setPaused(false);
+
+    }, 15000);
+
+  };
+
+  const closeZoom = () => {
+
+    if (resumeTimerRef.current) {
+      clearTimeout(resumeTimerRef.current);
+      resumeTimerRef.current = null;
+    }
+
+    setZoomedIndex(null);
+
+    setPaused(false);
+
+  };
+
+  const handleImageClick = (index) => {
+
+    setZoomedIndex(index);
+
+    setPaused(true);
+
+    scheduleResume();
+
+  };
 
   const nextSlide = () => {
 
@@ -122,9 +87,15 @@ function Certificates() {
 
   const prevSlide = () => {
 
-    setCurrent((prev) =>
-      prev - 2 < 0 ? certificates.length - 2 : prev - 2
-    );
+    setCurrent((prev) => {
+      if (prev === 0) {
+        const lastPair = certificates.length % 2 === 0
+          ? certificates.length - 2
+          : certificates.length - 1;
+        return lastPair;
+      }
+      return prev - 2;
+    });
 
   };
 
@@ -132,13 +103,21 @@ function Certificates() {
 
     setPaused(true);
 
+    if (zoomedIndex !== null) {
+
+      setZoomedIndex((prev) =>
+        prev + 1 >= certificates.length ? 0 : prev + 1
+      );
+
+      scheduleResume();
+
+      return;
+
+    }
+
     nextSlide();
 
-    setTimeout(() => {
-
-      setPaused(false);
-
-    }, 15000);
+    scheduleResume();
 
   };
 
@@ -146,13 +125,21 @@ function Certificates() {
 
     setPaused(true);
 
+    if (zoomedIndex !== null) {
+
+      setZoomedIndex((prev) =>
+        prev - 1 < 0 ? certificates.length - 1 : prev - 1
+      );
+
+      scheduleResume();
+
+      return;
+
+    }
+
     prevSlide();
 
-    setTimeout(() => {
-
-      setPaused(false);
-
-    }, 15000);
+    scheduleResume();
 
   };
 
@@ -172,10 +159,8 @@ function Certificates() {
 
   return (
 
-    <section className="relative py-20 bg-black overflow-hidden">
-
-      {/* FALLING LEAVES */}
-      <FallingLeaves />
+    <section id="certifications" className="scroll-mt-16 relative py-14 px-6 md:px-12 lg:px-20 overflow-hidden"
+>
 
       {/* BACKGROUND GLOW 1 */}
       <motion.div
@@ -225,7 +210,7 @@ function Certificates() {
         }}
       />
 
-      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
 
         {/* TITLE */}
         <motion.div
@@ -241,7 +226,7 @@ function Certificates() {
             duration: 0.8,
           }}
           viewport={{ once: true }}
-          className="mb-12"
+          className={zoomedIndex !== null ? "hidden" : "mb-8"}
         >
 
           <p className="uppercase tracking-[5px] text-red-500 text-[11px] mb-4">
@@ -259,7 +244,7 @@ function Certificates() {
         </motion.div>
 
         {/* SLIDER */}
-        <div className="relative">
+        <div className={`relative md:pl-6 flex flex-col justify-start ${zoomedIndex !== null ? "min-h-[460px]" : ""}`}>
 
           {/* LEFT BUTTON */}
           <button
@@ -282,48 +267,86 @@ function Certificates() {
           </button>
 
           {/* CERTIFICATE CARDS */}
-          <motion.div
-            key={current}
-            initial={{
-              opacity: 0,
-              x: 100,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 0.8,
-            }}
-            className="grid md:grid-cols-2 gap-6"
-          >
+          {zoomedIndex !== null ? (
 
-            {certificates
-              .slice(current, current + 2)
-              .map((item, index) => (
+            <motion.div
+              key={`zoom-${zoomedIndex}`}
+              initial={{
+                opacity: 0,
+                scale: 0.95,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+              }}
+              transition={{
+                duration: 0.5,
+              }}
+              className="flex justify-center"
+            >
 
-                <motion.div
-                  key={index}
-                  whileHover={{
-                    y: -8,
-                    scale: 1.02,
-                    boxShadow:
-                      "0px 0px 35px rgba(59,130,246,0.35), 0px 0px 70px rgba(59,130,246,0.15)",
-                  }}
-                  className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-3 transition duration-500"
-                >
+              <div
+                onClick={closeZoom}
+                className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-3 w-full max-w-3xl cursor-zoom-out"
+              >
 
-                  <img
-                    src={item}
-                    alt=""
-                    className="w-full h-[260px] object-cover rounded-xl"
-                  />
+                <img
+                  src={certificates[zoomedIndex]}
+                  alt={`Certificate ${zoomedIndex + 1}`}
+                  className="w-full h-[420px] object-contain rounded-xl"
+                />
 
-                </motion.div>
+              </div>
 
-              ))}
+            </motion.div>
 
-          </motion.div>
+          ) : (
+
+            <motion.div
+              key={current}
+              initial={{
+                opacity: 0,
+                x: 100,
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
+              }}
+              transition={{
+                duration: 0.8,
+              }}
+              className="grid md:grid-cols-2 gap-6 px-10 md:px-16"
+            >
+
+              {certificates
+                .slice(current, current + 2)
+                .map((item, index) => (
+
+                  <motion.div
+                    key={index}
+                    onClick={() => handleImageClick(current + index)}
+                    whileHover={{
+                      y: -8,
+                      scale: 1.02,
+                      boxShadow:
+                        "0px 0px 35px rgba(59,130,246,0.35), 0px 0px 70px rgba(59,130,246,0.15)",
+                    }}
+                    className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-2.5 transition duration-500 cursor-zoom-in"
+                  >
+
+                    <img
+                      src={item}
+                      alt={`Certificate ${current + index + 1}`}
+                      className="w-full h-[270px] object-contain rounded-xl"
+                    />
+
+                  </motion.div>
+
+                ))}
+
+            </motion.div>
+
+          )}
 
         </div>
 
