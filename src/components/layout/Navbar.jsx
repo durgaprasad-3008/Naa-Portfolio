@@ -53,11 +53,11 @@ function Navbar() {
                 }
                 .logo-ring-outer {
                   animation-name: logoSpinCW;
-                  animation-duration: 14s;
+                  animation-duration: 5s;
                 }
                 .logo-ring-inner {
                   animation-name: logoSpinCCW;
-                  animation-duration: 10s;
+                  animation-duration: 3.5s;
                 }
               `}
             </style>

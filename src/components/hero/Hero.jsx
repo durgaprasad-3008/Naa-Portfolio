@@ -268,7 +268,7 @@ function Hero() {
               duration: 5,
               repeat: Infinity,
             }}
-            src="/images/hacker.jpeg"
+            src={`${import.meta.env.BASE_URL}images/hacker.jpeg`}
             alt="Durga Prasad"
             className="relative z-10 w-[300px] md:w-[400px] object-contain drop-shadow-[0_0_35px_rgba(255,0,0,0.4)]"
           />

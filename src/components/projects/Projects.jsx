@@ -2,39 +2,55 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Shras Middleware Platform",
-    company: "Shras IT Solutions",
-    period: "2025 - Present",
+    title: "Digit Institute — Instructor Portal",
+    company: "Internship Project",
+    period: "2024",
     description:
-      "Enterprise middleware platform integrating ARCHIBUS and IBM Maximo for technician dispatch and workflow automation.",
+      "Recruitment landing page for onboarding instructors with modal-based application form, responsive banner sections, and \"Why teach with us\" engagement modules.",
     tech: [
-      "Java",
-      "Spring Boot",
-      "React",
-      "Node.js",
-      "PostgreSQL",
+      "HTML5",
+      "CSS3",
+      "Bootstrap 4.6",
+      "jQuery",
+      "JavaScript",
     ],
   },
 
   {
-    title: "TMS Support System",
-    company: "Shras IT Solutions",
+    title: "DpTech Institute — IT Training Platform",
+    company: "Personal Project (Own Platform)",
     period: "2025",
     description:
-      "Ticket management and support tracking platform with role-based dashboards and secure JWT authentication.",
+      "Full-stack IT training portal empowering future professionals with course listings, student registration, login authentication, and admin dashboard.",
     tech: [
       "React",
-      "Node.js",
-      "JWT",
-      "REST APIs",
-      "Docker",
+      "TypeScript",
+      "Tailwind CSS",
+      "Vite",
+      "Supabase",
+      "React Router",
+    ],
+  },
+
+  {
+    title: "Interior Works & Exterior Design",
+    company: "Personal Project",
+    period: "2025",
+    description:
+      "Responsive interior & exterior design showcase website featuring service galleries, work process flow, and client testimonials with WhatsApp integration.",
+    tech: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Lucide Icons",
+      "Font Awesome",
     ],
   },
 
   {
     title: "Labor Job Finder App",
-    company: "Personal Project",
-    period: "2024",
+    company: "Personal Project (currently in development stage)",
+    period: "2025",
     description:
       "Modern web application helping daily wage workers find nearby jobs with real-time location and role management.",
     tech: [
@@ -42,6 +58,85 @@ const projects = [
       "Spring Boot",
       "MySQL",
       "Tailwind",
+    ],
+  },
+
+  {
+    title: "KFUPM - Facility Management System",
+    company: "King Fahd University of Petroleum & Minerals — Dhahran, Saudi Arabia",
+    period: "2025-2026 (Present)",
+    description:
+      "Enterprise IWMS implementation for one of Saudi Arabia's most prestigious universities, managing campus-wide office and housing space, assets, and maintenance operations with CAD-integrated floor plans and SLA-driven workflows.",
+    tech: [
+      "ARCHIBUS",
+      "Java",
+      "JSP",
+      "Oracle",
+      "SQL Server",
+      "AutoCAD",
+      "BIM",
+      "REST APIs",
+      "Smart Client",
+      "Space Management",
+      "Asset Management",
+      "Maintenance Management",
+      "Move Management",
+      "Service Desk",
+    ],
+  },
+
+  {
+    title: "ISDB - Workplace Management Platform",
+    company: "Islamic Development Bank — Jeddah, Saudi Arabia",
+    period: "2025-2026 (Present)",
+    description:
+      "End-to-end IWMS deployment for the Islamic Development Bank covering space, asset, maintenance, move management, and service desk operations with workflow automation and SLA enforcement.",
+    tech: [
+      "ARCHIBUS",
+      "Java",
+      "JSP",
+      "SQL Server",
+      "AutoCAD",
+      "REST APIs",
+      "Workflow Rules",
+      "Smart Client",
+      "Space Management",
+      "Asset Management",
+      "Maintenance Management",
+      "Move Management",
+      "Service Desk",
+    ],
+  },
+
+  {
+    title: "Fieldo — Ticket Management System (locally using and ready for client usage)",
+    company: "Full-Stack Enterprise Application",
+    period: "2025 - 2026",
+    description:
+      "End-to-end ticket management platform with role-based access control, technician dispatch, inventory tracking, real-time notifications, and admin analytics dashboard for streamlined service operations.",
+    tech: [
+      "React 18",
+      "TypeScript",
+      "Vite",
+      "Redux Toolkit",
+      "React Hook Form",
+      "AG Grid",
+      "Recharts",
+      "Tailwind CSS",
+      "Axios",
+      "NestJS",
+      "Node.js",
+      "PostgreSQL",
+      "Sequelize",
+      "RabbitMQ",
+      "AWS SES",
+      "Handlebars",
+      "Swagger",
+      "JWT",
+      "Multi-JWT",
+      "Passport.js",
+      "bcrypt",
+      "RBAC",
     ],
   },
 ];
