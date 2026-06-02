@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
+import resumePDF from "./Resume/DurgaPrasad.pdf";
 
 function About() {
   return (
@@ -88,13 +89,10 @@ function About() {
           {/* DESCRIPTION */}
           <p className="text-gray-400 leading-8 text-sm md:text-base max-w-xl md:pl-6">
 
-            Full Stack Engineer with expertise in Java enterprise
-            applications, MERN stack development, and enterprise
-            integration platforms. Passionate about building
-            high-performance systems that seamlessly connect
-            business workflows with cutting-edge technology.
-            Specialized in Archibus IWMS solutions, middleware
-            platforms, and scalable microservices architecture.
+            Full Stack Engineer with expertise in Java Full Stack development,
+             web applications, and Archibus IWMS solutions. 
+             Passionate about creating scalable, reliable, 
+             and user-focused software using modern technologies and industry best practices.
 
           </p>
 
@@ -124,18 +122,20 @@ function About() {
           </div>
 
           {/* BUTTON */}
-          <motion.button
+          <motion.a
+            href={resumePDF}
+            download="Puttala_Durga_Prasad_Resume.pdf"
             whileHover={{
               scale: 1.03,
             }}
-            className="mt-8 md:ml-6 border border-red-600 bg-red-600 hover:bg-red-700 transition px-4 py-2 rounded-lg font-medium flex items-center gap-2 shadow-[0_0_15px_rgba(255,0,0,0.4)] text-xs"
+            className="mt-8 md:ml-6 border border-red-600 bg-red-600 hover:bg-red-700 transition px-4 py-2 rounded-lg font-medium inline-flex items-center gap-2 shadow-[0_0_15px_rgba(255,0,0,0.4)] text-xs w-fit"
           >
 
             DOWNLOAD RESUME
 
             <Download size={14} />
 
-          </motion.button>
+          </motion.a>
 
         </motion.div>
 

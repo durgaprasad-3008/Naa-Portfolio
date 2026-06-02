@@ -119,7 +119,7 @@ function Navbar() {
 
             <a
               href="#home"
-              className="hover:text-red-500 transition duration-300"
+              className="hover:text-white transition duration-300 hover:[text-shadow:_0_0_12px_rgba(255,255,255,0.95),_0_0_24px_rgba(255,255,255,0.5)]"
             >
 
               Home
@@ -132,7 +132,7 @@ function Navbar() {
 
             <a
               href="#about"
-              className="hover:text-red-500 transition duration-300"
+              className="hover:text-white transition duration-300 hover:[text-shadow:_0_0_12px_rgba(255,255,255,0.95),_0_0_24px_rgba(255,255,255,0.5)]"
             >
 
               About
@@ -145,7 +145,7 @@ function Navbar() {
 
             <a
               href="#experience"
-              className="hover:text-red-500 transition duration-300"
+              className="hover:text-white transition duration-300 hover:[text-shadow:_0_0_12px_rgba(255,255,255,0.95),_0_0_24px_rgba(255,255,255,0.5)]"
             >
 
               Experience
@@ -158,10 +158,10 @@ function Navbar() {
 
             <a
               href="#techstack"
-              className="hover:text-red-500 transition duration-300"
+              className="hover:text-white transition duration-300 hover:[text-shadow:_0_0_12px_rgba(255,255,255,0.95),_0_0_24px_rgba(255,255,255,0.5)]"
             >
 
-              Tech Stack
+              Tech-Stack
 
             </a>
 
@@ -171,7 +171,7 @@ function Navbar() {
 
             <a
               href="#projects"
-              className="hover:text-red-500 transition duration-300"
+              className="hover:text-white transition duration-300 hover:[text-shadow:_0_0_12px_rgba(255,255,255,0.95),_0_0_24px_rgba(255,255,255,0.5)]"
             >
 
               Projects
@@ -184,7 +184,7 @@ function Navbar() {
 
             <a
               href="#certifications"
-              className="hover:text-red-500 transition duration-300"
+              className="hover:text-white transition duration-300 hover:[text-shadow:_0_0_12px_rgba(255,255,255,0.95),_0_0_24px_rgba(255,255,255,0.5)]"
             >
 
               Certifications
@@ -197,7 +197,7 @@ function Navbar() {
 
             <a
               href="#achievements"
-              className="hover:text-red-500 transition duration-300"
+              className="hover:text-white transition duration-300 hover:[text-shadow:_0_0_12px_rgba(255,255,255,0.95),_0_0_24px_rgba(255,255,255,0.5)]"
             >
 
               Achievements
@@ -234,7 +234,7 @@ function Navbar() {
               <a
                 href="#home"
                 onClick={() => setMobileMenu(false)}
-                className="hover:text-red-500 transition duration-300"
+                className="hover:text-white transition duration-300 hover:[text-shadow:_0_0_12px_rgba(255,255,255,0.95),_0_0_24px_rgba(255,255,255,0.5)]"
               >
 
                 Home
@@ -248,7 +248,7 @@ function Navbar() {
               <a
                 href="#about"
                 onClick={() => setMobileMenu(false)}
-                className="hover:text-red-500 transition duration-300"
+                className="hover:text-white transition duration-300 hover:[text-shadow:_0_0_12px_rgba(255,255,255,0.95),_0_0_24px_rgba(255,255,255,0.5)]"
               >
 
                 About
@@ -262,7 +262,7 @@ function Navbar() {
               <a
                 href="#experience"
                 onClick={() => setMobileMenu(false)}
-                className="hover:text-red-500 transition duration-300"
+                className="hover:text-white transition duration-300 hover:[text-shadow:_0_0_12px_rgba(255,255,255,0.95),_0_0_24px_rgba(255,255,255,0.5)]"
               >
 
                 Experience
@@ -276,7 +276,7 @@ function Navbar() {
               <a
                 href="#techstack"
                 onClick={() => setMobileMenu(false)}
-                className="hover:text-red-500 transition duration-300"
+                className="hover:text-white transition duration-300 hover:[text-shadow:_0_0_12px_rgba(255,255,255,0.95),_0_0_24px_rgba(255,255,255,0.5)]"
               >
 
                 Tech Stack
@@ -290,7 +290,7 @@ function Navbar() {
               <a
                 href="#projects"
                 onClick={() => setMobileMenu(false)}
-                className="hover:text-red-500 transition duration-300"
+                className="hover:text-white transition duration-300 hover:[text-shadow:_0_0_12px_rgba(255,255,255,0.95),_0_0_24px_rgba(255,255,255,0.5)]"
               >
 
                 Projects
@@ -304,7 +304,7 @@ function Navbar() {
               <a
                 href="#certifications"
                 onClick={() => setMobileMenu(false)}
-                className="hover:text-red-500 transition duration-300"
+                className="hover:text-white transition duration-300 hover:[text-shadow:_0_0_12px_rgba(255,255,255,0.95),_0_0_24px_rgba(255,255,255,0.5)]"
               >
 
                 Certifications
@@ -318,7 +318,7 @@ function Navbar() {
               <a
                 href="#achievements"
                 onClick={() => setMobileMenu(false)}
-                className="hover:text-red-500 transition duration-300"
+                className="hover:text-white transition duration-300 hover:[text-shadow:_0_0_12px_rgba(255,255,255,0.95),_0_0_24px_rgba(255,255,255,0.5)]"
               >
 
                 Achievements

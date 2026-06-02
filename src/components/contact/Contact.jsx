@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, Send, Download } from "lucide-react";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import resumePDF from "../about/Resume/DurgaPrasad.pdf";
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -195,9 +196,8 @@ function Contact() {
 
           <p className="text-gray-400 mt-4 max-w-2xl text-sm md:text-base leading-7">
 
-            I'm currently open to full-time opportunities and exciting
-            projects. If you have an idea or opportunity, let's connect
-            and make it happen.
+           Open to contributing to free launch projects and innovative ideas.
+          Looking forward to collaborating and building meaningful solutions together..
 
           </p>
 
@@ -346,7 +346,8 @@ function Contact() {
             </div>
 
             <motion.a
-              href="#"
+              href={resumePDF}
+              download="Puttala_Durga_Prasad_Resume.pdf"
               whileHover={{
                 scale: 1.02,
               }}

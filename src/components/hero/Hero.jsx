@@ -203,9 +203,8 @@ function Hero() {
           {/* DESCRIPTION */}
           <p className="mt-6 text-gray-400 leading-8 text-sm md:text-base max-w-xl md:pl-6">
 
-            Passionate Full Stack Developer specializing
-            in enterprise systems, scalable applications,
-            modern UI experiences and middleware platforms.
+            Java Full Stack Developer and Archibus Developer passionate about creating scalable, 
+            user-friendly web applications and workplace management solutions with modern technologies.
 
           </p>
 
@@ -221,11 +220,14 @@ function Hero() {
 
             </a>
 
-            <button className="border border-red-600 px-6 py-3 rounded-xl text-sm hover:bg-red-600 transition duration-300">
+            <a
+              href="#contact"
+              className="inline-block border border-red-600 px-6 py-3 rounded-xl text-sm hover:bg-red-600 transition duration-300"
+            >
 
               Contact Me
 
-            </button>
+            </a>
 
           </div>
 
@@ -244,7 +246,7 @@ function Hero() {
           transition={{
             duration: 1.1,
           }}
-          className="relative flex justify-center md:justify-end mt-14 md:mt-0"
+          className="relative flex justify-center md:justify-end md:mr-12 lg:mr-20 mt-14 md:mt-0"
         >
 
           {/* IMAGE GLOW */}
@@ -268,9 +270,10 @@ function Hero() {
               duration: 5,
               repeat: Infinity,
             }}
-            src={`${import.meta.env.BASE_URL}images/hacker.jpeg`}
+            src={`${import.meta.env.BASE_URL}images/dd.png`}
             alt="Durga Prasad"
-            className="relative z-10 w-[300px] md:w-[400px] object-contain drop-shadow-[0_0_35px_rgba(255,0,0,0.4)]"
+            style={{ borderRadius: "10% 10% 10% 10% / 21% 10% 27% 10%" }}
+            className="relative w-[300px] md:w-[400px] object-cover border-2 border-purple-500/80 shadow-[0_0_45px_rgba(168,85,247,0.45)] drop-shadow-[0_0_35px_rgba(255,0,0,0.35)]"
           />
 
         </motion.div>

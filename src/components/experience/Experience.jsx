@@ -90,7 +90,7 @@ function Experience() {
               y: -5,
               boxShadow: "0px 0px 25px rgb(255, 0, 225)",
             }}
-            className="relative border border-red-500/10 bg-white/[0.02] backdrop-blur-xl rounded-2xl p-4 md:p-5 overflow-hidden max-w-5xl"
+            className="relative border border-red-500/10 bg-white/[0.02] backdrop-blur-xl rounded-2xl p-6 md:p-7 overflow-hidden max-w-5xl"
           >
 
             {/* GLOW */}
@@ -98,29 +98,38 @@ function Experience() {
 
             <div className="relative z-10">
 
-              {/* COMPANY */}
-              <h3 className="text-lg md:text-xl font-black text-white">
+              {/* HEADER: LOGO + ROLE + DATE */}
+              <div className="flex items-center gap-3 sm:gap-4">
 
-                Shras <span className="text-red-600">IT</span>
+                {/* LOGO */}
+                <img
+                  src={`${import.meta.env.BASE_URL}images/Shraslogo.png`}
+                  alt="Shras IT logo"
+                  className="w-16 h-16 sm:w-20 sm:h-20 object-contain shrink-0"
+                />
 
-              </h3>
+                <div className="min-w-0 flex-1">
 
-              {/* ROLE */}
-              <p className="text-red-500 mt-1.5 text-xs md:text-sm font-medium">
+                  {/* ROLE */}
+                  <p className="text-red-500 text-sm md:text-base font-semibold">
 
-                Full Stack Developer – Shras IT Solutions
+                    Full Stack Developer – Shras IT Solutions
 
-              </p>
+                  </p>
 
-              {/* DATE */}
-              <p className="text-gray-500 text-[11px] mt-1.5">
+                  {/* DATE */}
+                  <p className="text-gray-500 text-[11px] mt-1">
 
-                May 2024 – Present
+                    May 2024 – Present
 
-              </p>
+                  </p>
+
+                </div>
+
+              </div>
 
               {/* DESCRIPTION */}
-              <p className="text-gray-400 leading-6 mt-3 text-xs md:text-sm max-w-3xl">
+              <p className="text-gray-400 leading-6 mt-4 text-xs md:text-sm max-w-3xl">
 
                 Joined as a fresher and actively contributing to
                 full-stack enterprise applications using modern
@@ -203,7 +212,7 @@ function Experience() {
               y: -5,
               boxShadow: "0px 0px 25px rgb(38, 0, 255)",
             }}
-            className="relative border border-red-500/10 bg-white/[0.02] backdrop-blur-xl rounded-2xl p-4 md:p-5 overflow-hidden max-w-5xl"
+            className="relative border border-red-500/10 bg-white/[0.02] backdrop-blur-xl rounded-2xl p-6 md:p-7 overflow-hidden max-w-5xl"
           >
 
             {/* GLOW */}
@@ -211,29 +220,38 @@ function Experience() {
 
             <div className="relative z-10">
 
-              {/* COMPANY */}
-              <h3 className="text-lg md:text-xl font-black text-white">
+              {/* HEADER: LOGO + ROLE + DATE */}
+              <div className="flex items-center gap-3 sm:gap-4">
 
-                Digit <span className="text-red-600">Institute</span>
+                {/* LOGO */}
+                <img
+                  src={`${import.meta.env.BASE_URL}images/Digitlogo.png`}
+                  alt="Digit Institute logo"
+                  className="w-12 h-12 sm:w-14 sm:h-14 object-contain shrink-0"
+                />
 
-              </h3>
+                <div className="min-w-0 flex-1">
 
-              {/* ROLE */}
-              <p className="text-red-500 mt-1.5 text-xs md:text-sm font-medium">
+                  {/* ROLE */}
+                  <p className="text-red-500 text-sm md:text-base font-semibold">
 
-                Web Development Intern – Digit Institute
+                    Web Development Intern – Digit Institute
 
-              </p>
+                  </p>
 
-              {/* DATE */}
-              <p className="text-gray-500 text-[11px] mt-1.5">
+                  {/* DATE */}
+                  <p className="text-gray-500 text-[11px] mt-1">
 
-                November 2023 – March 2024
+                    November 2023 – March 2024
 
-              </p>
+                  </p>
+
+                </div>
+
+              </div>
 
               {/* DESCRIPTION */}
-              <p className="text-gray-400 leading-6 mt-3 text-xs md:text-sm max-w-3xl">
+              <p className="text-gray-400 leading-6 mt-4 text-xs md:text-sm max-w-3xl">
 
                 Built dynamic and responsive web pages while
                 strengthening frontend fundamentals and UI design

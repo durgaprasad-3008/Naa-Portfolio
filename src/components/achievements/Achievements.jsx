@@ -8,15 +8,17 @@ const achievements = [
       "Developed my first demo website during my training period and successfully made it live for real-world usage. This achievement gave me practical exposure to frontend development, deployment workflows, and project delivery.",
     image:
       "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1400&auto=format&fit=crop",
+    logo: `${import.meta.env.BASE_URL}images/Digitlogo.png`,
   },
 
   {
     title: "Saudi Arabia Onsite Opportunity",
-    company: "Shras IT Solutions",
+    company: "Shras IT Solutions Pvt Ltd",
     description:
       "Received an onsite opportunity to Saudi Arabia through Shras IT Solutions and worked directly with international clients in enterprise-level environments.",
     image:
       "https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?q=80&w=1400&auto=format&fit=crop",
+    logo: `${import.meta.env.BASE_URL}images/Shraslogo.png`,
   },
 
   {
@@ -24,8 +26,8 @@ const achievements = [
     company: "King Fahd University",
     description:
       "Worked on enterprise solutions and support activities for KFUPM Dammam, one of the most prestigious universities in Saudi Arabia.",
-    image:
-      "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1400&auto=format&fit=crop",
+    image: `${import.meta.env.BASE_URL}images/Kfupm-building.jpg`,
+    logo: `${import.meta.env.BASE_URL}images/kfupm.png`,
   },
 
   {
@@ -33,8 +35,8 @@ const achievements = [
     company: "Islamic Development Bank",
     description:
       "Currently contributing to enterprise project implementations and support activities for ISDB Jeddah through Shras IT Solutions.",
-    image:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1400&auto=format&fit=crop",
+    image: `${import.meta.env.BASE_URL}images/Isdb-building.jpg`,
+    logo: `${import.meta.env.BASE_URL}images/Isdb.png`,
   },
 ];
 
@@ -188,11 +190,25 @@ function Achievements() {
 
               <div className="p-7">
 
-                <p className="text-red-500 text-sm mb-2 tracking-wide uppercase">
+                {/* LOGO + COMPANY */}
 
-                  {item.company}
+                <div className="flex items-center gap-3 mb-3">
 
-                </p>
+                  {item.logo && (
+                    <img
+                      src={item.logo}
+                      alt={`${item.company} logo`}
+                      className="w-9 h-9 object-contain shrink-0"
+                    />
+                  )}
+
+                  <p className="text-red-500 text-base font-medium tracking-wide uppercase">
+
+                    {item.company}
+
+                  </p>
+
+                </div>
 
                 <h3 className="text-2xl font-bold text-white mb-4 leading-snug">
 

@@ -5,6 +5,7 @@ const projects = [
     title: "Digit Institute — Instructor Portal",
     company: "Internship Project",
     period: "2024",
+    logo: "images/Digitlogo.png",
     description:
       "Recruitment landing page for onboarding instructors with modal-based application form, responsive banner sections, and \"Why teach with us\" engagement modules.",
     tech: [
@@ -65,6 +66,7 @@ const projects = [
     title: "KFUPM - Facility Management System",
     company: "King Fahd University of Petroleum & Minerals — Dhahran, Saudi Arabia",
     period: "2025-2026 (Present)",
+    logo: "images/kfupm.png",
     description:
       "Enterprise IWMS implementation for one of Saudi Arabia's most prestigious universities, managing campus-wide office and housing space, assets, and maintenance operations with CAD-integrated floor plans and SLA-driven workflows.",
     tech: [
@@ -89,6 +91,7 @@ const projects = [
     title: "ISDB - Workplace Management Platform",
     company: "Islamic Development Bank — Jeddah, Saudi Arabia",
     period: "2025-2026 (Present)",
+    logo: "images/Isdb.png",
     description:
       "End-to-end IWMS deployment for the Islamic Development Bank covering space, asset, maintenance, move management, and service desk operations with workflow automation and SLA enforcement.",
     tech: [
@@ -341,29 +344,41 @@ function Projects() {
                     "
                   />
 
-                  {/* PERIOD */}
+                  {/* HEADER */}
 
-                  <p className="text-red-500 text-xs tracking-[3px] uppercase mb-3 relative z-10">
+                  <div className="flex items-start gap-4 relative z-10 mb-5">
 
-                    {project.period}
+                    {project.logo && (
+                      <img
+                        src={`${import.meta.env.BASE_URL}${project.logo}`}
+                        alt={`${project.title} logo`}
+                        className="w-14 h-14 sm:w-16 sm:h-16 object-contain shrink-0"
+                      />
+                    )}
 
-                  </p>
+                    <div className="min-w-0 flex-1">
 
-                  {/* TITLE */}
+                      <h3 className="text-xl md:text-2xl font-bold">
 
-                  <h3 className="text-xl md:text-2xl font-bold mb-2 relative z-10">
+                        {project.title}
 
-                    {project.title}
+                      </h3>
 
-                  </h3>
+                      <p className="text-gray-400 text-sm mt-2">
 
-                  {/* COMPANY */}
+                        {project.company}
 
-                  <p className="text-gray-400 text-sm mb-5 relative z-10">
+                      </p>
 
-                    {project.company}
+                      <p className="text-red-500 text-xs tracking-[3px] uppercase mt-2">
 
-                  </p>
+                        {project.period}
+
+                      </p>
+
+                    </div>
+
+                  </div>
 
                   {/* DESCRIPTION */}
 
